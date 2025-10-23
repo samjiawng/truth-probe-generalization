@@ -1,20 +1,3 @@
-[Abstract](#abstract)  
-[Installation](#installation)  
-[Quick Start](#quick-start)  
-[Methodology](#methodology)  
-[Results](#results)  
-[Project Structure](#project-structure)  
-[Usage Examples](#usage-examples)  
-[Supported Models](#supported-models)  
-[Configuration](#configuration)  
-[Experimental Findings](#experimental-findings)  
-[Citation](#citation)  
-[Related Work](#related-work)  
-[Contributing](#contributing)  
-[License](#license)  
-[Contact](#contact)  
-[Acknowledgments](#acknowledgments)
-
 # Truth Probe Generalization
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
