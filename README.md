@@ -1,3 +1,20 @@
+- [Abstract](#abstract)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Methodology](#methodology)
+- [Results](#results)
+- [Project Structure](#project-structure)
+- [Usage Examples](#usage-examples)
+- [Supported Models](#supported-models)
+- [Configuration](#configuration)
+- [Experimental Findings](#experimental-findings)
+- [Citation](#citation)
+- [Related Work](#related-work)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgments](#acknowledgments)
+
 # Truth Probe Generalization
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -10,7 +27,7 @@
 
 ## Abstract
 
-This repository implements a systematic investigation of truth probe generalization in large language models. We train linear classifiers on transformer hidden state activations to detect statement veracity and evaluate their ability to generalize across distinct knowledge domains. Our findings demonstrate that while probes achieve near-perfect accuracy on in-domain data, cross-domain generalization remains limited, suggesting domain-specific rather than universal truth representations in current models.
+We systematically investigate how linear truth probes generalize across domains in large language models. We train linear classifiers on transformer hidden activations to detect statement veracity and evaluate their ability to generalize across distinct knowledge domains. Our findings demonstrate that while probes reach near-perfect in-domain accuracy on in-domain data, cross-domain generalization remains limited, suggesting domain-specific rather than universal truth representations in current models.
 
 **Research Period:** January 2025 - March 2025
 
@@ -272,7 +289,7 @@ If you use this code or findings in your research, please cite:
 
 ```bibtex
 @misc{jiang2025truthprobe,
-  author = {Jiang, Samuel},
+  author = {Wang, Samuel},
   title = {Truth Probe Generalization: Evaluating Cross-Domain Transfer in Language Models},
   year = {2025},
   publisher = {GitHub},
