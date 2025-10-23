@@ -46,12 +46,12 @@ python run_experiment.py --model_name gpt2
 ```
 truth-probe-generalization/
 ├── src/
-│   ├── data/          # Dataset generation
-│   ├── models/        # Activation extraction
-│   ├── probes/        # Probe training
-│   └── evaluation/    # Evaluation & visualization
-├── quickstart.sh      # Quick start script
-└── run_experiment.py  # Full pipeline
+│   ├── data/          
+│   ├── models/       
+│   ├── probes/      
+│   └── evaluation/   
+├── quickstart.sh     
+└── run_experiment.py  
 ```
 
 ## Target
