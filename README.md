@@ -4,11 +4,11 @@ Evaluating how linear truth probes trained on language model activations general
 
 ## Features
 
-- 🔍 Dataset generation across 6+ domains
-- 🧠 Activation extraction from any HuggingFace model
-- 📊 Linear probe training with evaluation
-- 🎯 Out-of-distribution generalization testing
-- 📈 Visualization tools
+- Dataset generation across 6+ domains
+- Activation extraction from any HuggingFace model
+- Linear probe training with evaluation
+- Out-of-distribution generalization testing
+- Visualization tools
 
 ## Quick Start
 
