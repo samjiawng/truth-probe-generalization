@@ -1,9 +1,3 @@
-#!/bin/bash
-echo "=================================="
-echo "Truth Probe Generalization"
-echo "Quick Start"
-echo "=================================="
-
 pip install -r requirements.txt --quiet
 
 python run_experiment.py \
