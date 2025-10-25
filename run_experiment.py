@@ -1,4 +1,3 @@
-"""Run complete experiment pipeline."""
 import argparse
 import os
 import subprocess
@@ -25,20 +24,20 @@ def run_full_experiment(model_name="gpt2", train_domains=None, test_domains=None
     eval_dir = os.path.join(output_base, "evaluation")
     plots_dir = os.path.join(output_base, "plots")
     
-    run_cmd(["python", "src/data/generate_dataset.py", "--output_dir", data_dir, "--num_per_domain", str(num_per_domain), "--domain_split", "--train_domains"] + train_domains + ["--test_domains"] + test_domains, "Generating Dataset")
+    run_cmd(["python3", "src/data/generate_dataset.py", "--output_dir", data_dir, "--num_per_domain", str(num_per_domain), "--domain_split", "--train_domains"] + train_domains + ["--test_domains"] + test_domains, "Generating Dataset")
     
-    run_cmd(["python", "src/models/extract_activations.py", "--model_name", model_name, "--dataset_path", os.path.join(data_dir, "train_domain_split.jsonl"), "--output_dir", train_acts, "--batch_size", "16"], "Extracting Train Activations")
+    run_cmd(["python3", "src/models/extract_activations.py", "--model_name", model_name, "--dataset_path", os.path.join(data_dir, "train_domain_split.jsonl"), "--output_dir", train_acts, "--batch_size", "16"], "Extracting Train Activations")
     
-    run_cmd(["python", "src/models/extract_activations.py", "--model_name", model_name, "--dataset_path", os.path.join(data_dir, "test_domain_split.jsonl"), "--output_dir", test_acts, "--batch_size", "16"], "Extracting Test Activations")
+    run_cmd(["python3", "src/models/extract_activations.py", "--model_name", model_name, "--dataset_path", os.path.join(data_dir, "test_domain_split.jsonl"), "--output_dir", test_acts, "--batch_size", "16"], "Extracting Test Activations")
     
-    run_cmd(["python", "src/probes/train_probes.py", "--activations_dir", train_acts, "--output_dir", probes_dir], "Training Probes")
+    run_cmd(["python3", "src/probes/train_probes.py", "--activations_dir", train_acts, "--output_dir", probes_dir], "Training Probes")
     
     for probe_file in os.listdir(probes_dir):
         if probe_file.startswith("probe_layer_"):
             layer = int(probe_file.split("_")[2].split(".")[0])
-            run_cmd(["python", "src/evaluation/evaluate.py", "--probe_path", os.path.join(probes_dir, probe_file), "--activations_dir", test_acts, "--layer", str(layer), "--output_dir", eval_dir], f"Evaluating Layer {layer}")
+            run_cmd(["python3", "src/evaluation/evaluate.py", "--probe_path", os.path.join(probes_dir, probe_file), "--activations_dir", test_acts, "--layer", str(layer), "--output_dir", eval_dir], f"Evaluating Layer {layer}")
     
-    run_cmd(["python", "src/evaluation/visualize.py", "--results_dir", eval_dir, "--output_dir", plots_dir], "Creating Visualizations")
+    run_cmd(["python3", "src/evaluation/visualize.py", "--results_dir", eval_dir, "--output_dir", plots_dir], "Creating Visualizations")
     
     print(f"\n{'='*60}\nEXPERIMENT COMPLETE!\n{'='*60}")
     print(f"Results: {output_base}")

@@ -12,6 +12,3 @@ python run_experiment.py \
     --test_domains geography math \
     --num_per_domain 20 \
     --output_base "experiments/quickstart"
-
-echo ""
-echo "✓ Complete! Check experiments/quickstart/"

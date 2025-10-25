@@ -1,4 +1,3 @@
-"""Linear probe implementations."""
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
